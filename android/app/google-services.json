@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1011565816291",
+    "project_id": "flutter-project-7af2f",
+    "storage_bucket": "flutter-project-7af2f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011565816291:android:fe32f7225b5838d2dc98d6",
+        "android_client_info": {
+          "package_name": "com.example.personality_test_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAvC_EXGhueaidH4ArAaFQghc-of8v86U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
