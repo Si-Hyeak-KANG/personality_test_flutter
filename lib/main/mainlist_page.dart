@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../sub/question_page.dart';
+
 
 /*
 * 스테이트풀 위젯(Statefull widget)은 동적 데이터를 관리
@@ -43,7 +45,12 @@ class _MainPage extends State<MainPage> {
                 return ListView.builder(
                   itemBuilder: (context, value) {
                     return InkWell(
-                      onTap: (){},
+                      onTap: () async {
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (context) {
+                              return QuestionPage(question: list['questions'][value]['file'].toString());
+                        }));
+                      },
                       child: SizedBox(
                         height: 50,
                         child: Card(
