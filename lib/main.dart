@@ -1,8 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:personality_test_app/firebase_options.dart';
-import 'main/mainlist_page.dart';
 import 'firebase_options.dart';
+import 'main/mainlist_page.dart';
 
 /**
  * #FIREBASE Analysis
