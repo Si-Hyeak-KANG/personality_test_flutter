@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyANdY6cCfmQIO1vI1LgBQuCfiRVPyV6HHc</string>
+	<string>AIzaSyCfhW3IdHe5gSSBcuyZvEr3umaYhYkhkWs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1011565816291</string>
+	<string>1093197207307</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.personalityTestApp</string>
 	<key>PROJECT_ID</key>
-	<string>flutter-project-7af2f</string>
+	<string>my-project-1-77cd0</string>
 	<key>STORAGE_BUCKET</key>
-	<string>flutter-project-7af2f.appspot.com</string>
+	<string>my-project-1-77cd0.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1011565816291:ios:38827b22875fd983dc98d6</string>
+	<string>1:1093197207307:ios:427e102827fcb377aa740e</string>
 </dict>
 </plist>

@@ -2,8 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:firebase_analytics/firebase_analytics.dart';
 import '../sub/question_page.dart';
+
 
 
 /*
@@ -46,10 +47,20 @@ class _MainPage extends State<MainPage> {
                   itemBuilder: (context, value) {
                     return InkWell(
                       onTap: () async {
-                        Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context) {
-                              return QuestionPage(question: list['questions'][value]['file'].toString());
-                        }));
+                        await FirebaseAnalytics.instance.logEvent(
+                          name: "test_click",
+                          parameters: {
+                            "test_name" :
+                                list['questions'][value]['title'].toString(),
+                          },
+                        ).then((result) {
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                                return QuestionPage(
+                                  question: list['questions'][value]['file'].toString(),
+                                );
+                          }));
+                        });
                       },
                       child: SizedBox(
                         height: 50,
