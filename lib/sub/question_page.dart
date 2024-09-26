@@ -2,12 +2,12 @@ import 'dart:convert';
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import '../detail/detail_page.dart';
 
 class QuestionPage extends StatefulWidget {
   final Map<String, dynamic> question;
   const QuestionPage({super.key, required this.question});
+
   @override
   State<StatefulWidget> createState() {
     return _QuestionPage();
@@ -40,7 +40,9 @@ class _QuestionPage extends State<QuestionPage> {
                 value: index,
                 groupValue: selectNumber,
                 onChanged: (value) {
-                  selectNumber = index;
+                  setState(() {
+                    selectNumber = index;
+                  });
                 })
             ],
           ),

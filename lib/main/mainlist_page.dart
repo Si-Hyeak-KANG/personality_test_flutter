@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -51,6 +50,7 @@ class _MainPage extends State<MainPage> {
   Future<List<String>> loadAsset() async {
     // return await rootBundle.loadString('res/api/list.json'); // 로컬 json 호출
     await _testRef.get().then((value) => value.children.forEach((element) {
+      print('_testRev : $element.value.toString()');
       testList.add(element.value.toString());
     }));
     return testList;
