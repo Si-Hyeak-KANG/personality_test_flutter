@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import '../sub/question_page.dart';
 
 final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance;
@@ -49,10 +50,29 @@ class _MainPage extends State<MainPage> {
 
   Future<List<String>> loadAsset() async {
     // return await rootBundle.loadString('res/api/list.json'); // 로컬 json 호출
-    await _testRef.get().then((value) => value.children.forEach((element) {
-      print('_testRev : $element.value.toString()');
-      testList.add(element.value.toString());
-    }));
+    var connectivityResult = await Connectivity().checkConnectivity();
+
+    if(connectivityResult == ConnectivityResult.mobile ||
+      connectivityResult == ConnectivityResult.wifi) {
+      await _testRef.get().then((value) => value.children.forEach((element) {
+        print('_testRev : $element.value.toString()');
+        testList.add(element.value.toString());
+      }));
+    } else {
+      if (mounted) {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return const AlertDialog(
+              title: Text('심리 테스트 앱'),
+              content: Text(
+                '지금 인터넷에 연결되지 않아 심리 테스트 앱을 '
+                    '사용할 수 없습니다. 나중에 다시 실행해 주세요.'),
+            );
+          },
+        );
+      }
+    }
     return testList;
   }
   @override
