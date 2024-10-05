@@ -40,12 +40,17 @@ class _MainPage extends State<MainPage> {
 
   void remoteConfigInit() async {
     await remoteConfig.fetchAndActivate();
-    welcomeTitle = remoteConfig.getString("welcome");
-    bannerUse = remoteConfig.getBool("banner");
-    itemHeight = remoteConfig.getInt("item_height");
-    print('welcomeTitle : $welcomeTitle');
-    print('bannerUse : $bannerUse');
-    print('itemHeight : $itemHeight');
+    String welcomeTitle2 = remoteConfig.getString("welcome");
+    bool bannerUse2 = remoteConfig.getBool("banner");
+    int itemHeight2 = remoteConfig.getInt("item_height");
+
+    welcomeTitle = '심리 테스트';
+    bannerUse = true;
+    itemHeight = 50;
+
+    print('welcomeTitle2 : $welcomeTitle2');
+    print('bannerUse2 : $bannerUse2');
+    print('itemHeight2 : $itemHeight2');
   }
 
   Future<List<String>> loadAsset() async {
